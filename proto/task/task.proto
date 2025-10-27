@@ -6,6 +6,8 @@ option go_package = "github.com/Wendiboy/project-protos/proto/tasks";
 message Task {
   uint32 id      = 1;  // Уникальный идентификатор
   string title   = 2;  // Название задачи
+  bool isDone    = 3;    
+  uint32 userId  = 4;
 }
 
 // --- Запросы и ответы ---
