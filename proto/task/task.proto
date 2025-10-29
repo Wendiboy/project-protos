@@ -37,6 +37,13 @@ message ListTasksResponse {
   repeated Task tasks = 1;
 }
 
+message ListTasksByUserRequest {
+  uint32 userId = 1; 
+}
+message ListTasksByUserResponse {
+  repeated Task tasks = 1;
+}
+
 // Обновление задачи
 message UpdateTaskRequest {
   uint32 id = 1;
@@ -59,6 +66,7 @@ service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
   rpc GetTask    (GetTaskRequest)    returns (GetTaskResponse);
   rpc ListTasks  (ListTasksRequest)  returns (ListTasksResponse);
+  rpc ListTasksByUser  (ListTasksByUserRequest)  returns (ListTasksByUserResponse);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
 }
